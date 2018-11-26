@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>角力游戏</title>
+    <link href="css/dialog.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div style="text-align: center;">
+    <h1 class="text-center">角力游戏</h1>
+    <hr/>
+</div>
+<div style="text-align: center;">
+    <h3>今天的角力游戏事件</h3>
+    <h3>玩家1：<span id="wrestler1"></span> <span style="color: red">VS</span> 玩家2：<span id="wrestler2"></span></h3>
+
+    <button id="registerToFight" onclick="registerAsSecondWrestler()">注册玩家2去决斗</button>
+    <button id="fight" onclick="fight()">决斗</button>
+    <button id="winnerGet" onclick="winnerGet()">赢家取出回报</button>
+    <div><h3>赢家：<span id="winner"></span> <span style="color: red"></span> 回报：<span id="gains"></span></h3></div>
+
+</div>
+
+<div>
+    <div><h4>事件：</h4></div>
+    <ul id="eventsList">
+    </ul>
+</div>
+
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/web3.min.js"></script>
+<script src="js/lib/truffle-contract.js"></script>
+<script src="js/lib/dialog.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

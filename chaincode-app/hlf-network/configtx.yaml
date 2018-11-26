@@ -1,0 +1,98 @@
+################################################################################
+#
+#   SECTION: Organizations
+#
+#   - This section defines the different organizational identities which will
+#   be referenced later in the configuration.
+#
+################################################################################
+Organizations:
+    - &OrderOrg
+        Name: OrderOrg
+        ID: jonluo.com
+        AdminPrincipal: Role.ADMIN
+        MSPDir: crypto-config/ordererOrganizations/jonluo.com/msp
+
+    - &Org1
+        Name: Org1
+        ID: org1.jonluo.com
+        AdminPrincipal: Role.ADMIN
+        MSPDir: crypto-config/peerOrganizations/org1.jonluo.com/msp
+        AnchorPeers:
+            - Host: peer0.org1.jonluo.com
+              Port: 7051
+
+################################################################################
+#
+#   SECTION: Orderer
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for orderer related parameters.
+#
+################################################################################
+Orderer: &OrdererDefaults
+    OrdererType: solo
+    Addresses:
+        - orderer.jonluo.com:7050
+    BatchTimeout: 5s
+    # Batch Size: Controls the number of messages batched into a block.
+    BatchSize:
+        # Max Message Count: The maximum number of messages to permit in a batch.
+        MaxMessageCount: 10
+        # Absolute Max Bytes: The absolute maximum number of bytes allowed for
+        # the serialized messages in a batch. If the "kafka" OrdererType is
+        # selected, set 'message.max.bytes' and 'replica.fetch.max.bytes' on the
+        # Kafka brokers to a value that is larger than this one.
+        AbsoluteMaxBytes: 98 MB
+        # Preferred Max Bytes: The preferred maximum number of bytes allowed for
+        # the serialized messages in a batch. A message larger than the
+        # preferred max bytes will result in a batch larger than preferred max
+        # bytes.
+        PreferredMaxBytes: 512 KB
+    # Max Channels is the maximum number of channels to allow on the ordering
+    # network. When set to 0, this implies no maximum number of channels.
+    MaxChannels: 0
+
+    # Organizations is the list of orgs which are defined as participants on
+    # the orderer side of the network.
+    Organizations:
+
+################################################################################
+#
+#   SECTION: Application
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for application related parameters.
+#
+################################################################################
+Application: &ApplicationDefaults
+    Organizations:
+
+
+################################################################################
+#
+#   SECTION : Profile
+#
+#   - Different configuration profiles may be encoded here to be specified
+#   as parameters to the configtxgen tool. The profiles which specify consortiums
+#   are to be used for generating the orderer genesis block.  With the correct
+#   consortium members defined in the orderer genesis block, channel creation
+#   requests may be generated with only the org member names and a consortium name
+#
+################################################################################
+Profiles:
+    ChainProfile:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrderOrg
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+        Consortium: SampleConsortium
+        Consortiums:
+            SampleConsortium:
+                Organizations:
+                    - *OrderOrg
+                    - *Org1

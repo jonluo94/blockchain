@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jonluo的博客">
+<meta name="twitter:description" content="When your abilities can&#39;t support your ambitions, stay calm and learn">
+<meta name="twitter:image:src" content="../../images/avatar.png">
+
+<meta property="og:url" content="">
+<meta property="og:title" content="Jonluo的博客">
+<meta property="og:description" content="When your abilities can&#39;t support your ambitions, stay calm and learn">
+<meta property="og:site_name" content="Jonluo的博客">
+<meta property="og:image" content="../../images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Jonluo的博客">
+<meta itemprop="description" content="When your abilities can&#39;t support your ambitions, stay calm and learn">
+<meta itemprop="image" content="../../images/avatar.png">
+
+<link rel="canonical" href="">
+
+<link rel="shortcut icon" href="../../favicon.png?v=2017">
+<link rel="apple-itouch-icon" href="../../favicon.png?v=2017">
+<link rel="stylesheet" href="../../bundle/index.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script type="text/javascript">
+    var conn, reloadTimer, connectTimer;
+    var connect = function() {
+        conn = new WebSocket('ws://' + location.host + '/live');
+        conn.onmessage = function(event) {
+            if (event.data === 'change') {
+                if (reloadTimer) clearTimeout(reloadTimer);
+                reloadTimer = setTimeout(function() {
+                    window.location.reload();
+                }, 200);
+            }
+        };
+        conn.onclose = function() {
+            if (connectTimer) clearTimeout(connectTimer);
+            connectTimer = setTimeout(function() {
+                connect();
+            }, 1000);
+        };
+    };
+    connect();
+</script>
+
+
+        <meta name="keywords" content="When your abilities can&#39;t support your ambitions, stay calm and learn">
+        <meta name="description" content="When your abilities can&#39;t support your ambitions, stay calm and learn">
+        <title>Jonluo的博客</title>
+    </head>
+    <body>
+        <article class="container">
+
+              <header class="header-wrap tag-content">
+  <nav class="main-nav">
+
+      <a class="blog-logo" href="../../index.html"><img class="logo" src="../../images/avatar.png" /> </a>
+
+    <ul class="menu vertical">
+        <li class="menu-item"><a href="../../archive.html"  style="color:#000;">归档</a></li>
+        <li class="menu-item"><a href="../../tag.html"  style="color:#000;">标签</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+
+            <article class="main page" id="article">
+                <header class="header site">
+
+
+                    <h1 class="tag">jonluo</h1>
+                    <h2 class="tag-sub">1 篇文章</h2>
+
+                </header>
+                <ul class="article-list">
+
+                    <li class="article">
+                        <a class="title" href="../../about.me.html">关于我（jonluo）</a>
+
+                        <section class="preview content"><p>我的简介。</p>
+</section>
+                        <section class="info">
+                            <span class="avatar" style="background-image: url(../../images/avatar.png);"></span>
+                            <a class="name" href="../../about.me.html">Jonluo</a>
+
+                            <span class="date" data-time="1534500000"><span class="from"></span></span>
+
+                            <span class="tags">
+                            <a class="tag" href="../../tag/jonluo/index.html">jonluo</a><a class="tag" href="../../tag/%e4%bd%9c%e8%80%85/index.html">作者</a>
+                            </span>
+                        </section>
+                    </li>
+
+                </ul>
+                <section class="page-nav">
+
+
+
+                </section>
+            </article>
+        </article>
+        <footer class="footer clearfix">
+    <span class="copyright">
+        Jonluo的博客 &copy;
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+    </body>
+    <script src="../../bundle/index.js"></script>
+</html>

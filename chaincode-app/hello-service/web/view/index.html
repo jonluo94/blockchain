@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Beego</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<header class="hero-unit" style="background-color:#A9F16C">
+    <div class="container">
+        <div class="row">
+            <div style="text-align: center;">
+                <h1>hello ：<span id="content"></span></h1>
+            </div>
+            <div style="text-align: center;">
+                <input type="text" name="val" id="val"/>
+                <button id="btn" type="button">改变</button>
+            </div>
+            <div id="list"></div>
+        </div>
+    </div>
+</header>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        $.get("/get", function (result) {
+            $("#content").text(result);
+        });
+
+        $("#btn").click(function () {
+            var content = $("#val").val();
+            $.get("/put?value=" + content, function (result) {
+                $("#list").append("<h4>" + result + "</h4>");
+
+                $.get("/get", function (result) {
+                    $("#content").text(result);
+                });
+            });
+        });
+
+    });
+</script>
+</html>
+

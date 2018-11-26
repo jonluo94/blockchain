@@ -1,0 +1,20 @@
+# "OrdererOrgs" - Definition of organizations managing orderer nodes
+OrdererOrgs:
+  - Name: OrderOrg
+    Domain: jonluo.com
+    # Specs is an array of Spec entries.  Each Spec entry consists of two fields : Hostname and CommonName
+    Specs:
+      - Hostname: orderer
+# "PeerOrgs" - Definition of organizations managing peer nodes
+PeerOrgs:
+  - Name: Org1
+    Domain: org1.jonluo.com
+    # Allows for the definition of 1 or more hosts that are created sequentially
+    # from a template. By default, this looks like "peer%d" from 0 to Count-1.
+    # You may override the number of nodes (Count), the starting index (Start)
+    # or the template used to construct the name (Hostname).
+    Template:
+      Count: 2
+    Users:
+      # The number of user accounts _in addition_ to Admin
+      Count: 2
