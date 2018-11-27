@@ -18,6 +18,7 @@ var path = require('path');
 var fs = require('fs');
 var util = require('util');
 var hfc = require('fabric-client');
+var config = require('../config.json');
 var helper = require('./helper.js');
 var logger = helper.getLogger('invoke-chaincode');
 
@@ -90,7 +91,7 @@ var invokeChaincode = async function(peerNames, channelName, chaincodeName, fcn,
 						let message = 'REQUEST_TIMEOUT:' + eh.getPeerAddr();
 						logger.error(message);
 						eh.disconnect();
-					}, 3000);
+					}, config.eventWaitTime);
 					eh.registerTxEvent(tx_id_string, (tx, code, block_num) => {
 						logger.info('The chaincode invoke chaincode transaction has been committed on peer %s',eh.getPeerAddr());
 						logger.info('Transaction %s has status of %s in blocl %s', tx, code, block_num);
