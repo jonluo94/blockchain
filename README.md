@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/npm-v6.4.0-blue.svg)
 ![](https://img.shields.io/badge/docker-v18.06.0-blue.svg)
 ![](https://img.shields.io/badge/docker&nbsp;compose-v1.22.0-blue.svg)
-![](https://img.shields.io/badge/progress-96%25-green.svg)
+![](https://img.shields.io/badge/progress-100%25-green.svg)
 #### 项目介绍
 区块链技术  
 从区块链1.0的数字货币到区块链2.0的智能合约再到区块链3.0的超级账本，循序渐进学习区块链技术和应用并加以实践。
