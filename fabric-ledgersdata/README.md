@@ -13,7 +13,7 @@
     │   │   └── blockfile_000000 
     │   └── testchainid             //testchainid 创世块 (初始channel)
     │       └── blockfile_000000
-    └── index                       //所有的 channel 的区块索引信息
+    └── index                       //所有的 channel 的区块信息
         ├── 000002.ldb
         ├── 000005.ldb
         ├── 000026.log
@@ -174,11 +174,11 @@
     ```
     分析: 看出 key 是有channel名+具体意思组成, 例如blkMgrInfo 获取存储在index库中最新检查点信息, indexCheckpointKey 最新的区块编号 , n 区块信息    
 
-* peer 用 LevelBD 存储分布式账本数据,存放在 ledgersData 文件夹里
+* peer 用 LevelBD 存储区块数据和账本数据,存放在 ledgersData 文件夹里
   * 目录结构
     ```
     .
-    ├── chains                                     //channl的数据,比 orderer 多 chaincode 交易信息,
+    ├── chains                                     //peer加入channel的区块数据
     │   ├── chains
     │   │   └── myc
     │   │       └── blockfile_000000
@@ -211,7 +211,7 @@
     │   ├── LOCK
     │   ├── LOG
     │   └── MANIFEST-000012
-    └── stateLeveldb                              //chaincode 里数据状态信息
+    └── stateLeveldb                              //chaincode 里数据状态信息也就是账本数据
         ├── 000002.ldb
         ├── 000025.log
         ├── CURRENT
