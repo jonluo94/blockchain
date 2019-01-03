@@ -43,7 +43,7 @@
 - [QTUM](https://github.com/qtumproject/qtum) 量子链
 - [BYTOM(BTM)](https://github.com/Bytom/bytom) 比原链
 - [NEO](https://github.com/neo-project/neo) 小蚁
-- [ZILLIGA](https://github.com/Zilliqa/Zilliqa) 
+- [ZILLIQA](https://github.com/Zilliqa/Zilliqa) 
 - [CARDANO(ADA)](https://github.com/input-output-hk/cardano-sl) 艾达币
 - [METAVERSE](https://github.com/mvs-org/metaverse) 元界
 - [NEBULAS](https://github.com/nebulasio/go-nebulas) 星云
