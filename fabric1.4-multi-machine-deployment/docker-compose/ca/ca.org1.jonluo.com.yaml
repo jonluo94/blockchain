@@ -1,0 +1,24 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#CA1_PRIVATE_KEY
+
+version: '2'
+
+services:
+  ca.org1.jonluo.com:
+    extends:
+      file:   ../base/ca-base.yaml
+      service: ca
+    container_name: ca.org1.jonluo.com
+    environment:
+      - FABRIC_CA_SERVER_CA_NAME=ca.org1.jonluo.com
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.jonluo.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/af97bdedbc8bae6382c67cff4045ca0ca59403b3005c2007191600a4b091fdde_sk
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.jonluo.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/af97bdedbc8bae6382c67cff4045ca0ca59403b3005c2007191600a4b091fdde_sk
+    ports:
+      - 7054:7054
+    volumes:
+      - ../../network-config/crypto-config/peerOrganizations/org1.jonluo.com/ca/:/etc/hyperledger/fabric-ca-server-config

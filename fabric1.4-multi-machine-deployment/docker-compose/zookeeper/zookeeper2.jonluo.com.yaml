@@ -1,0 +1,19 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+services:
+  zookeeper2.jonluo.com:
+    container_name: zookeeper2.jonluo.com
+    extends:
+      file: ../base/zookeeper-base.yaml
+      service: zookeeper
+    environment:
+      - ZOO_SERVERS=server.1=zookeeper1.jonluo.com:2888:3888 server.2=zookeeper2.jonluo.com:2888:3888 server.3=zookeeper3.jonluo.com:2888:3888
+      - ZOO_MY_ID=2
+    volumes:
+       # 数据固化，将数据映射到本地
+       - /fabricdata/zookeeper2:/data

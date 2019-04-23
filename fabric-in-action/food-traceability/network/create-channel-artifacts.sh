@@ -3,8 +3,8 @@
   echo "##### Generate certificates using cryptogen tool #########"
   echo "##########################################################"
 
-  if [ -d "crypto-config" ]; then
-    rm -Rf crypto-config
+  if [ -d "channel/crypto-config" ]; then
+    rm -Rf channel/crypto-config
   fi
   set -x
   ./bin/cryptogen generate  --output=./channel/crypto-config --config=./channel/cryptogen.yaml

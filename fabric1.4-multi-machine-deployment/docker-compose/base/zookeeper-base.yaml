@@ -1,0 +1,20 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+services:
+  zookeeper:
+    image: hyperledger/fabric-zookeeper
+    restart: always
+    extends:
+      file: base.yaml
+      service: hosts
+    environment:
+      - quorumListenOnAllIPs=true
+    ports:
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888

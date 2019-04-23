@@ -3,7 +3,7 @@
 
 * 准备两台 centos7 虚拟机，设置并网络连通
   * 192.168.1.210 
-  * 192.168.1.211
+  * 192.168.1.213
 *  到 https://github.com/ipfs/go-ipfs 下在安装包 https://github.com/ipfs/go-ipfs/releases/tag/v0.4.18
    * go-ipfs_v0.4.18_linux-amd64.tar.gz
 * 下载并安装密钥创建工具
@@ -32,16 +32,36 @@
   ```
   ipfs bootstrap rm all
   ``` 
-* 在 192.168.1.211 里清除所有缺省启动节点 
+* 在 192.168.1.213 里清除所有缺省启动节点 
   ```
   ipfs bootstrap rm all
   ``` 
-  将 192.168.1.210 创建的 /root/.ipfs/swarm.key 复制到  192.168.1.211 的 /root/.ipfs/swarm.key  
-  在 192.168.1.211  添加 192.168.1.210 为默认节点 （节点地址通过 `ipfs id` 查看）
+  将 192.168.1.210 创建的 /root/.ipfs/swarm.key 复制到  192.168.1.213 的 /root/.ipfs/swarm.key  
+  在 192.168.1.213  添加 192.168.1.210 为默认节点 （节点地址通过 `ipfs id` 查看）
   ```   
   ipfs bootstrap add /ip4/192.168.1.210/tcp/4001/ipfs/QmRBWWrTwd7d1QCKEjcLdGgZAvSKtSNgZdQznzF58RBwZ2
   ```
-* 两台虚拟机启动IPFS节点  
+* 修改配置
+  在 192.168.1.210  添加
+  ```
+  ipfs config  Addresses.API "/ip4/192.168.1.210/tcp/5001"
+  ipfs config  Addresses.Gateway "/ip4/192.168.1.210/tcp/8080"
+  ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"*\"]"
+  ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
+  ```
+  在 192.168.1.213  添加
+  ```
+  ipfs config  Addresses.API "/ip4/192.168.1.213/tcp/5001"
+  ipfs config  Addresses.Gateway "/ip4/192.168.1.213/tcp/8080"
+  ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"*\"]"
+  ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
+  ```
+
+* 两台虚拟机启动IPFS节点 
+  关闭防火墙
+  ```
+  iptables -F 
+  ``` 
   ```
   ipfs daemon & 
   ```

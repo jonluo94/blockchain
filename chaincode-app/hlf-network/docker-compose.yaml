@@ -6,7 +6,7 @@ networks:
 services:
 
   orderer.jonluo.com:
-    image: hyperledger/fabric-orderer
+    image: hyperledger/fabric-orderer:1.1.0
     container_name: orderer.jonluo.com
     environment:
       - ORDERER_GENERAL_LOGLEVEL=info
@@ -36,7 +36,7 @@ services:
           - orderer.jonluo.com
 
   ca.org1.jonluo.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.1.0
     container_name: ca.org1.jonluo.com
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
@@ -57,7 +57,7 @@ services:
           - ca.org1.jonluo.com
 
   peer0.org1.jonluo.com:
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:1.1.0
     container_name: peer0.org1.jonluo.com
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -98,7 +98,7 @@ services:
           - peer0.org1.jonluo.com
 
   peer1.org1.jonluo.com:
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:1.1.0
     container_name: peer1.org1.jonluo.com
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock

@@ -1,0 +1,18 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#CA1_PRIVATE_KEY
+
+version: '2'
+
+services:
+  ca:
+    image: hyperledger/fabric-ca
+    extends:
+      file: base.yaml
+      service: hosts
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    ports:
+      - 7054:7054
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'

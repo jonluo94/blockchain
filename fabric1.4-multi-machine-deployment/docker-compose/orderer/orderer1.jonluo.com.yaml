@@ -1,0 +1,19 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+services:
+  orderer1.jonluo.com:
+    extends:
+      file:   ../base/orderer-base.yaml
+      service: orderer
+    container_name: orderer1.jonluo.com
+    volumes:
+      - ../../network-config/channel-artifacts/genesis.block:/var/hyperledger/orderer/genesis.block
+      - ../../network-config/crypto-config/ordererOrganizations/jonluo.com/orderers/orderer1.jonluo.com/msp:/var/hyperledger/orderer/msp
+      - ../../network-config/crypto-config/ordererOrganizations/jonluo.com/orderers/orderer1.jonluo.com/tls/:/var/hyperledger/orderer/tls
+      # 数据固化，将数据映射到本地
+      - /fabricdata/orderer1:/var/hyperledger/production

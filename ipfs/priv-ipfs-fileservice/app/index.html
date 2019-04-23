@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ipfs api demo</title>
+</head>
+<body>
+
+
+<div style="text-align: center;">
+    <h1 class="text-center">ipfs api 数据上传 demo</h1>
+</div>
+<div style="text-align: center;">
+    <input id="inputData">
+    <button id="upData" onclick="App.upData()">上传数据</button>
+</div>
+<div style="text-align: center;">
+    <span id="hash"></span>
+    <button id="getData" onclick="App.getData()">获取数据</button>
+    <span id="outDate"></span>
+</div>
+
+
+<div style="text-align: center;">
+    <h1 class="text-center">ipfs api 文件上传 demo</h1>
+</div>
+<div style="text-align: center;">
+    <input id="fileData" type="file" name="file" >
+    <button id="upData" onclick="App.upFile()">上传文件</button>
+</div>
+<div style="text-align: center;">
+    查看文件：<a id="down" href="#" target="_blank">http://192.168.1.210:8080/ipfs/<span id="fileHash"></span></a>
+</div>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://unpkg.com/ipfs-http-client/dist/index.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

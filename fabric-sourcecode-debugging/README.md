@@ -59,21 +59,6 @@
   CORE_PEER_ADDRESS=127.0.0.1:7051
   FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)
   ```
-* 3，接着调试网络，用debug模式运行 peer 下的 main.go 文件 并添加配置，绝对路径的地方相对修改，然后运行
-  
-  Program arguments：
-  ```
-  channel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050
-  ```
-  
-  Environment： 
-  ```
-  CORE_PEER_LOCALMSPID=DEFAULT
-  CORE_PEER_ID=cli
-  CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)
-  CORE_PEER_ADDRESS=127.0.0.1:7051
-  FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)
-  ```
 
 * 4，接着调试网络，用debug模式运行 peer 下的 main.go 文件 并添加配置，绝对路径的地方相对修改，然后运行
   

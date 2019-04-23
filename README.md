@@ -21,11 +21,13 @@
 * ipfs 分布式网络存储
 * hyperledger-fabric 超级账本
 * chaincode 超级账本链上代码案例
-* chaincode-app 超级账本fabric-sdk-go app案例
+* chaincode-app 超级账本fabric-sdk-go app案例 (fabric版本<1.2.0) 
 * chaincode-node-app 超级账本fabric-sdk-node app案例 
 * fabric-in-action fabric实战案例  
 * fabric-sourcecode-debugging fabric源码调试  
 * fabric-ledgersdata fabric账本数据初探
+* fabric1.4-multi-machine-deployment fabric1.4多机部署网络
+* fabric-go-sdk-examples 超级账本fabric-sdk-go 案例
 
 > 本项目内容为区块链技术学习程序样例。如您觉得该项目对您有用，欢迎点击右上方的Star按钮，给予支持！！ 
 
@@ -50,3 +52,7 @@
 
 #####  区块链体系
 ![](architecture.jpg)
+
+
+> 后面会陆陆续续写些干货文章, 可以关注下公众号    
+   ![](gzh.jpg)

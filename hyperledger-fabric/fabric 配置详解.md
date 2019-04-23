@@ -274,13 +274,12 @@
   #
   ###############################################################################
   ledger:
-    blockchain:       ##  设置系统区块链的整体配置，【后面会被丢弃】
+    blockchain:       
     state:            ##  状态DB的相关配置(包括 golevelDB、couchDB)、DN连接、查询最大返回记录数等
       stateDatabase: goleveldb    ##  stateDB的底层DB配置  (默认golevelDB)
       couchDBConfig:              ##  如果启用couchdb，配置连接信息 (goleveldb 不需要配置这些)
          couchDBAddress: 127.0.0.1:5984
          username:
-        o prevent unintended users from discovering the password.
          password:
          maxRetries: 3    ##  运行时出错重试数
          maxRetriesOnStartup: 10  ##  启动时出错的重试数
@@ -589,7 +588,7 @@
       BatchTimeout: 2s        ##  区块打包的最大超时时间 (到了该时间就打包区块)
       BatchSize:              ##  区块打包的最大包含交易数
           MaxMessageCount: 10         ##  一个区块里最大的交易数
-          AbsoluteMaxBytes: 99 MB     ##  一个区块的最大字节数， 任何时候都不能超过
+          AbsoluteMaxBytes: 98 MB     ##  一个区块的最大字节数， 任何时候都不能超过
           PreferredMaxBytes: 512 KB   ##  一个区块的建议字节数，如果一个交易消息的大小超过了这个值, 就会被放入另外一个更大的区块中
    
       MaxChannels: 0          ##  【可选项】 表示Orderer 允许的最大通道数， 默认 0 表示没有最大通道数

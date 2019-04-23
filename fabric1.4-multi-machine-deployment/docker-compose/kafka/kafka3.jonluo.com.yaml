@@ -1,0 +1,20 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+services:
+  kafka3.jonluo.com:
+    container_name: kafka3.jonluo.com
+    hostname: 'kafka3.jonluo.com'
+    extends:
+      file: ../base/kafka-base.yaml
+      service: kafka
+    environment:
+      - KAFKA_BROKER_ID=2
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper1.jonluo.com:2181,zookeeper2.jonluo.com:2181,zookeeper3.jonluo.com:2181
+    volumes:
+      # 数据固化，将数据映射到本地
+      - /fabricdata/kafka3:/tmp/kafka-logs

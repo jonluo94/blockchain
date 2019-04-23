@@ -1,0 +1,37 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+services:
+# 多机网络域名对应ip
+  hosts:
+    image: busybox
+    volumes:
+      - /etc/localtime:/etc/localtime
+    environment:
+      - COLUMNS=500
+      - GODEBUG=netdns=go
+    extra_hosts:
+      - "zookeeper1.jonluo.com:192.168.1.201"
+      - "zookeeper2.jonluo.com:192.168.1.202"
+      - "zookeeper3.jonluo.com:192.168.1.203"
+
+      - "kafka1.jonluo.com:192.168.1.201"
+      - "kafka2.jonluo.com:192.168.1.202"
+      - "kafka3.jonluo.com:192.168.1.203"
+      - "kafka4.jonluo.com:192.168.1.204"
+
+      - "orderer1.jonluo.com:192.168.1.201"
+      - "orderer2.jonluo.com:192.168.1.202"
+      - "orderer3.jonluo.com:192.168.1.203"
+      - "orderer4.jonluo.com:192.168.1.204"
+
+      - "ca.org1.jonluo.com:192.168.1.201"
+      - "peer0.org1.jonluo.com:192.168.1.201"
+
+      - "ca.org2.jonluo.com:192.168.1.201"
+      - "peer0.org2.jonluo.com:192.168.1.202"
+

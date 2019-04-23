@@ -30,8 +30,10 @@
   * 首先发布ipns ： ipfs name publish hash (hash为项目ipfs-blog文件夹的hash)
   * 就可以通 http://127.0.0.1:8080/ipns/id 访问blog (id 为 ipfs id 查看的id)
   * 每次跟新代码都要重新执行 ipfs name publish hash
-- JS-IPFS-API 实现读写数据，文件上传下载
+- JS-IPFS-API 实现读写数据，文件上传下载 (公链)
   * 项目文件夹 jsipfs-app
   * npm install 安装依赖
   * 通过 npm run dev 运行
   * 详细 api 文档 [js-ipfs-api](https://github.com/ipfs/js-ipfs-api)
+- JS-IPFS-HTTP-CLIENT 实现读写数据，文件上传下载 (私链)
+  * 项目文件夹 priv-ipfs-fileservice
