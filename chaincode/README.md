@@ -2,6 +2,8 @@
 * hello world 
 * simple stub (shim.ChaincodeStubInterface 的方法的使用)
 * vote (投票案例)
+* couchdbquery (couchdb复杂查询案例)
+* erc20 (chaincode实现erc20标准的代币案例)
 #### 以 hello world 实现操作，其他 Chaincode 同理实现即可
 * 建 helloworld 文件夹，并在文件夹下新建 helloworld.go 和 helloworld_test.go
 * 编写链上代码 helloworld.go

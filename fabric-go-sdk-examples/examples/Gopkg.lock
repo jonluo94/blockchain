@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:5d3e23515e7916c152cc665eda0f7eaf6fdf8fdfe7c3dbac97049bcbd649b33f"
+  name = "github.com/Knetic/govaluate"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d216395917cc49052c7c7094cf57f09657ca08a8"
+  version = "v3.0.0"
+
+[[projects]]
   digest = "1:d6afaeed1502aa28e80a4ed0981d570ad91b2579193404256ce672ed0a609e0d"
   name = "github.com/beorn7/perks"
   packages = ["quantile"]
@@ -73,11 +81,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:2c1437d319a5ece1f082bfa3022f03a4e1c02805fff1a9f2c4e84389d49c59c0"
+  digest = "1:be408f349cae090a7c17a279633d6e62b00068e64af66a582cae0983de8890ea"
   name = "github.com/golang/mock"
   packages = ["gomock"]
   pruneopts = "UT"
-  revision = "73dc87cad333b55a02058f4b3d872dbbafddc2b0"
+  revision = "937870445b8bddd7f05ea90e81c58ebe83681534"
 
 [[projects]]
   digest = "1:239c4c7fd2159585454003d9be7207167970194216193a8a210b8d29576f19c9"
@@ -135,7 +143,7 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:ec7757d9a15cd30896008499c952ebc0b39e6276c7a2b99281aec929c311c0cf"
+  digest = "1:bcc4bc2532ccbb5b1631b4f43d63cfd1334872d331de17798e4ab7bc85d69693"
   name = "github.com/hyperledger/fabric-sdk-go"
   packages = [
     "internal/github.com/hyperledger/fabric-ca/api",
@@ -194,6 +202,8 @@
     "pkg/client/common/selection/sorter/blockheightsorter",
     "pkg/client/common/verifier",
     "pkg/client/ledger",
+    "pkg/client/msp",
+    "pkg/client/resmgmt",
     "pkg/common/errors/multi",
     "pkg/common/errors/retry",
     "pkg/common/errors/status",
@@ -219,6 +229,7 @@
     "pkg/core/logging/modlog",
     "pkg/core/mocks",
     "pkg/fab",
+    "pkg/fab/ccpackager/gopackager",
     "pkg/fab/channel",
     "pkg/fab/channel/membership",
     "pkg/fab/chconfig",
@@ -268,6 +279,7 @@
     "pkg/util/pathvar",
     "pkg/util/test",
     "test/metadata",
+    "third_party/github.com/hyperledger/fabric/common/cauthdsl",
     "third_party/github.com/hyperledger/fabric/core/common/ccprovider",
     "third_party/github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/rwsetutil",
     "third_party/github.com/hyperledger/fabric/core/ledger/util",
@@ -317,12 +329,12 @@
   revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
 
 [[projects]]
-  digest = "1:e0f50a07c0def90588d69f77178712c6fdc67eb6576365f551cce98b44b501bf"
+  digest = "1:93131d8002d7025da13582877c32d1fc302486775a1b06f62241741006428c5e"
   name = "github.com/pelletier/go-toml"
   packages = ["."]
   pruneopts = "UT"
-  revision = "63909f0a90ab0f36909e8e044e46ace10cf13ba2"
-  version = "v1.3.0"
+  revision = "728039f679cbcd4f6a54e080d2219a4c4928c546"
+  version = "v1.4.0"
 
 [[projects]]
   digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
@@ -373,11 +385,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:49b09905e781d7775c086604cc00083e1832d0783f1f421b79f42657c457d029"
+  digest = "1:08f5524b0ca33fab03c05bd0015337c1d5658c3cf580d4772d789cbe42344db3"
   name = "github.com/prometheus/procfs"
-  packages = ["."]
+  packages = [
+    ".",
+    "internal/fs",
+  ]
   pruneopts = "UT"
-  revision = "8368d24ba045f26503eb745b624d930cbe214c79"
+  revision = "740c0778500738e56e1877d52904c431a3fdc573"
 
 [[projects]]
   digest = "1:bb495ec276ab82d3dd08504bbc0594a65de8c3b22c6f2aaa92d05b73fbf3a82e"
@@ -445,11 +460,11 @@
     "sha3",
   ]
   pruneopts = "UT"
-  revision = "df01cb2cc480549d72034218dd98bf97671450ac"
+  revision = "a29dc8fdc73485234dbef99ebedb95d2eced08de"
 
 [[projects]]
   branch = "master"
-  digest = "1:d9403fe14e9ea0436e59be99b24c76517720c524d5649c3359224364e70252cd"
+  digest = "1:07c70ed7db30e61c8e28f5139a426deef24d6be14a16a679f2c38e89b1704475"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -461,27 +476,29 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "1f3472d942ba824034fb77cab6a6cfc1bc8a2c3c"
+  revision = "f4e77d36d62c17c2336347bb2670ddbd02d092b7"
 
 [[projects]]
   branch = "master"
-  digest = "1:c98cce72bee9d1b1d523dd106cbde733c6aab8f2c38510d3626a107e775f57eb"
+  digest = "1:76eb085408ed50effcb126e51935c2f5150974c607dcff34e9f0d647104cce72"
   name = "golang.org/x/sys"
   packages = [
     "cpu",
     "unix",
   ]
   pruneopts = "UT"
-  revision = "f0ce4c0180bef7e9c51babed693a6e47fdd8962f"
+  revision = "a43fa875dd822b81eb6d2ad538bc1f4caba169bd"
 
 [[projects]]
-  digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
+  digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
   name = "golang.org/x/text"
   packages = [
     "collate",
     "collate/build",
     "internal/colltab",
     "internal/gen",
+    "internal/language",
+    "internal/language/compact",
     "internal/tag",
     "internal/triegen",
     "internal/ucd",
@@ -494,8 +511,8 @@
     "unicode/rangetable",
   ]
   pruneopts = "UT"
-  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
-  version = "v0.3.0"
+  revision = "342b2e1fbaa52c93f31447ad2c6abc048c63e475"
+  version = "v0.3.2"
 
 [[projects]]
   branch = "master"
@@ -503,7 +520,7 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "e7d98fc518a78c9f8b5ee77be7b0b317475d89e1"
+  revision = "54afdca5d873f7b529e2ce3def1a99df16feda90"
 
 [[projects]]
   digest = "1:707c3a5d10ed430ea767d73df122d9eb3dfb6312bbacc9f2e39204390686d1d0"
@@ -560,9 +577,15 @@
   input-imports = [
     "github.com/hyperledger/fabric-sdk-go/pkg/client/channel",
     "github.com/hyperledger/fabric-sdk-go/pkg/client/ledger",
+    "github.com/hyperledger/fabric-sdk-go/pkg/client/msp",
+    "github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt",
+    "github.com/hyperledger/fabric-sdk-go/pkg/common/errors/retry",
     "github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab",
+    "github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp",
     "github.com/hyperledger/fabric-sdk-go/pkg/core/config",
+    "github.com/hyperledger/fabric-sdk-go/pkg/fab/ccpackager/gopackager",
     "github.com/hyperledger/fabric-sdk-go/pkg/fabsdk",
+    "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl",
     "github.com/pkg/errors",
   ]
   solver-name = "gps-cdcl"
